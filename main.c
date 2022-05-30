@@ -120,6 +120,7 @@ int
 	src_winsize	= DEFAULT_SRCWINSIZE,
 	src_thoff 	= (TCPHDR_SIZE >> 2),
 	count		= DEFAULT_COUNT,
+	flood_count = DEFAULT_COUNT, /* Added by Patrick */
 	ctrlzbind	= DEFAULT_BIND,
 	delaytable_index= 0,
 	eof_reached	= FALSE,
@@ -371,8 +372,14 @@ int main(int argc, char **argv)
 	if (opt_flood) {
 		fprintf(stderr,
 			"hping in flood mode, no replies will be shown\n");
+		int flood_pkts_sent = 0; /* Added by Patrick */
 		while (1) {
 			send_packet(0);
+			/* Added by Patrick */
+			flood_pkts_sent++;
+			if (count != -1 && count == flood_pkts_sent) {
+				return 0;
+			}
 		}
 	}
 
