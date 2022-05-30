@@ -11,7 +11,7 @@
 #ifndef _RELEASE_H
 #define _RELEASE_H
 
-#define RELEASE_VERSION "3.0.0-alpha-1"
+#define RELEASE_VERSION "3.0.0-alpha-1a"
 #define RELEASE_DATE "$Id: release.h,v 1.4 2004/04/09 23:38:56 antirez Exp $"
 #define CONTACTS "<antirez@invece.org>"
 
