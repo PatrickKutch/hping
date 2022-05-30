@@ -1,6 +1,9 @@
 hping3 README file
 antirez@invece.org
 
+CHANGES from antirez's version
+	Updated to allow -c --count option to work with --flood option
+	
 DESCRIPTION
 
 	hping3 is a network tool able to send custom TCP/IP
